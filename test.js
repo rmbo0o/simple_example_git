@@ -10,18 +10,22 @@ request.onload = () => {
     buttons.forEach((button) => {
       button.addEventListener("click", () => {
         let posts = request.response;
+        console.log(posts)
         let contentHTML = "";
 
           for (let i = 0; i < posts.length; i++) { // Start from 0 and loop to posts.length
              const post = posts[i];
               if (parseInt(button.value) === post.userId) {
-              contentHTML += `<h6> ID User => ${post.userId}</h6>`;
-              contentHTML += `<h4> Title => ${post.title}</h4>`;
-              contentHTML += `<p> Body => ${post.body}</p>`;
+                contentHTML += `<div>
+               
+               <h4> Title : ${post.title}</h4>
+               <p> Body : ${post.body}</p>
+              </div>`
             }
-            
+            document.getElementById("content").innerHTML = contentHTML ;
+            console.log(contentHTML);
           }
-         document.getElementById("content").innerHTML = contentHTML;
+         
           
       });
     });
