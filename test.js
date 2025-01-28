@@ -17,7 +17,6 @@ request.onload = () => {
              const post = posts[i];
               if (parseInt(button.value) === post.userId) {
                 contentHTML += `<div>
-               
                <h4> Title : ${post.title}</h4>
                <p> Body : ${post.body}</p>
               </div>`
